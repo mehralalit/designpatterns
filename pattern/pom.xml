@@ -4,4 +4,17 @@
   <artifactId>pattern</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Design Pattern</name>
+  
+  <developers>
+  	<developer>
+  		<name>Lalit Mehra</name>
+  		<email>mehralalit3@gmail.com</email>
+  	</developer>
+  </developers>
+  
+  <properties>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+  </properties>
+  
 </project>
