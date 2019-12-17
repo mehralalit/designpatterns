@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Available implements State {
-	
+
 	private BoardingPassKiosk kiosk;
 
 	public Available(BoardingPassKiosk kiosk) {
@@ -12,21 +12,20 @@ public class Available implements State {
 	}
 
 	@Override
-	public void selectAirline() {
-		
+	public void selectAirline(Scanner scanner) {
+
 		Map<Integer, String> airlines = this.kiosk.getAirlines();
-		
-		try(Scanner scanner = new Scanner(System.in)) {
-			System.out.println("Select the Airlines");
-			airlines.forEach((key, value) -> {
-				System.out.printf("%d -> %s\n", key, value);
-			});
-			System.out.print(": ");
-			
-			int airline = scanner.nextInt();
-			kiosk.setAirline(airline);
-			kiosk.setNextState(kiosk.getWaiting());
-		}
+
+		System.out.println("Select the Airlines");
+		airlines.forEach((key, value) -> {
+			System.out.printf("%d -> %s\n", key, value);
+		});
+		System.out.print(": ");
+
+		int airline = scanner.nextInt(); scanner.nextLine();
+		kiosk.setAirline(airline);
+		kiosk.setState(kiosk.getWaiting());
+
 	}
 
 }

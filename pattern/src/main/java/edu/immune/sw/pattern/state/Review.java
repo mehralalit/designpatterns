@@ -1,40 +1,32 @@
 package edu.immune.sw.pattern.state;
 
+import java.util.Scanner;
+
 public class Review implements State {
 
+	private String CONFIRM_INPUT = "x";
 	private BoardingPassKiosk kiosk;
 
 	public Review(BoardingPassKiosk kiosk) {
 		this.kiosk = kiosk;
 	}
-	
-	@Override
-	public void selectAirline() {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
-	public void inputPNR() {
-		// TODO Auto-generated method stub
+	public void reviewSelection(Scanner scanner) {
 
-	}
+		System.out.println(" -- Review Your Selection -- ");
+		System.out.printf(" Airline: %s\n", kiosk.getAirline());
+		System.out.printf(" PNR: %s\n", kiosk.getPnr());
+		System.out.printf(" Seat: %s\n", kiosk.getSeat());
 
-	@Override
-	public void pickSeats() {
-		// TODO Auto-generated method stub
+		System.out.printf(" Press 'x' to Confirm: ");
+		String input = scanner.next();
 
-	}
-
-	@Override
-	public void reviewSelection() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void printBoardingPass() {
-		// TODO Auto-generated method stub
+		if (CONFIRM_INPUT.equals(input)) {
+			kiosk.setState(kiosk.getConfirm());
+		} else {
+			kiosk.setState(kiosk.getAvailable());
+		}
 
 	}
 

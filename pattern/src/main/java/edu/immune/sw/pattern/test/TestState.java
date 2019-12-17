@@ -1,5 +1,7 @@
 package edu.immune.sw.pattern.test;
 
+import java.util.Scanner;
+
 import edu.immune.sw.pattern.state.BoardingPassKiosk;
 
 /**
@@ -12,13 +14,23 @@ import edu.immune.sw.pattern.state.BoardingPassKiosk;
 public class TestState {
 
 	public static void main(String[] args) {
-		
+
 		BoardingPassKiosk kiosk = new BoardingPassKiosk();
-		
-		kiosk.selectAirline();
-		
-		
-		
+
+		try (Scanner scanner = new Scanner(System.in)) {
+
+			kiosk.selectAirline(scanner);
+
+			kiosk.inputPNR(scanner);
+
+			kiosk.pickSeats(scanner);
+
+			kiosk.reviewSelection(scanner);
+
+			kiosk.printBoardingPass();
+
+		}
+
 	}
-	
+
 }
