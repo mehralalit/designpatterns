@@ -2,6 +2,13 @@ package edu.immune.sw.pattern.state;
 
 import java.util.Scanner;
 
+/**
+ * Review state acts as a milestone before the final state 
+ * 
+ * @author Lalit Mehra
+ * @since Dec 10, 2019
+ *
+ */
 public class Review implements State {
 
 	private String CONFIRM_INPUT = "x";
@@ -11,6 +18,9 @@ public class Review implements State {
 		this.kiosk = kiosk;
 	}
 
+	/**
+	 * Displays the user all the inputs provided in the previous states and asks for confirmation
+	 */
 	@Override
 	public void reviewSelection(Scanner scanner) {
 

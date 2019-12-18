@@ -3,6 +3,14 @@ package edu.immune.sw.pattern.state;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Initial state of the {@link BoardingPassKiosk} <br>
+ * Control returns to this state after a successful run or if wrong PNR is entered
+ * 
+ * @author Lalit Mehra
+ * @since Dec 10, 2019
+ *
+ */
 public class Available implements State {
 
 	private BoardingPassKiosk kiosk;

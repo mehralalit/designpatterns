@@ -1,5 +1,12 @@
 package edu.immune.sw.pattern.state;
 
+/**
+ * Final state that assist with result display  
+ * 
+ * @author Lalit Mehra
+ * @since Dec 10, 2019
+ *
+ */
 public class Confirm implements State {
 
 	private BoardingPassKiosk kiosk;
@@ -8,6 +15,9 @@ public class Confirm implements State {
 		this.kiosk = kiosk;
 	}
 
+	/**
+	 * Displays the boarding pass to the user 
+	 */
 	@Override
 	public void printBoardingPass() {
 		System.out.println(" Boarding Pass Details ");

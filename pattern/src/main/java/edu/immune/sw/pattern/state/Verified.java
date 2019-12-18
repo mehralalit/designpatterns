@@ -4,6 +4,14 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
+/**
+ * After input validation/verification the control is transferred here for further processing. <br>
+ * Verified state is where the majority of processing takes place. 
+ * 
+ * @author Lalit Mehra
+ * @since Dec 10, 2019
+ *
+ */
 public class Verified implements State {
 
 	private BoardingPassKiosk kiosk;
@@ -12,7 +20,12 @@ public class Verified implements State {
 		this.kiosk = kiosk;
 	}
 
+	/**
+	 * Generates a random seat matrix 
+	 * @return seat matrix of size 10 cross 5
+	 */
 	private boolean[][] fetchSeatMatrix() {
+		/* assuming a default seat matrix with 10 rows and 5 columns */
 		boolean[][] seatMatrix = new boolean[10][5];
 
 		/* fill seat matrix with random values */
@@ -25,11 +38,17 @@ public class Verified implements State {
 		return seatMatrix;
 	}
 
+	/**
+	 * Assist with cosmetic beautification 
+	 */
 	private void printHorizontalBorder() {
 		IntStream.rangeClosed(1, 11).forEach((x) -> System.out.print("-"));
 		System.out.println();
 	}
 
+	/**
+	 * Displays the seat matrix to the user
+	 */
 	private void displaySeatMatrix() {
 		boolean seatMatrix[][] = fetchSeatMatrix();
 		for (int row = 0; row < 10; row++) {
@@ -43,6 +62,9 @@ public class Verified implements State {
 		printHorizontalBorder();
 	}
 
+	/**
+	 * Assists with seat selection  
+	 */
 	@Override
 	public void pickSeats(Scanner scanner) {
 

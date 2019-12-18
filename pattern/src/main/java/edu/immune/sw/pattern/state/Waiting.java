@@ -3,6 +3,14 @@ package edu.immune.sw.pattern.state;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ * Once the process is triggered the control is transferred here to take initial input from the user. <br>
+ * For {@link BoardingPassKiosk} the initial input is flight PNR   
+ * 
+ * @author Lalit Mehra
+ * @since Dec 10, 2019
+ *
+ */
 public class Waiting implements State {
 
 	private BoardingPassKiosk kiosk;
@@ -27,9 +35,11 @@ public class Waiting implements State {
 		/* validate PNR */
 		if (validate(pnr)) {
 			System.out.println(" -- PNR Verified -- ");
+			/* transfer the control to verified state */
 			kiosk.setState(kiosk.getVerified());
 		} else {
 			System.out.println(" -- PNR Invalid -- ");
+			/* transfer the control to initial state to restart the process */
 			kiosk.setState(kiosk.getAvailable());
 		}
 
