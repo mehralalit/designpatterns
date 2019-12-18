@@ -5,7 +5,7 @@ import java.util.Scanner;
 import edu.immune.sw.pattern.state.BoardingPassKiosk;
 
 /**
- * Functional Test
+ * Functional Test to verify the success use case assuming all extenal inputs are fed correctly
  * 
  * @author Lalit Mehra
  * @since Dec 10, 2019

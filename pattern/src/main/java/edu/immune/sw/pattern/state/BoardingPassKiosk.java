@@ -4,8 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * BoardingPassKiosk is at the center of this small application whose states are
+ * being managed via different classes
+ * 
+ * @author Lalit Mehra
+ * @since Dec 10, 2019
+ *
+ */
 public class BoardingPassKiosk implements Stateful {
 
+	/* stores default set of airlines */
 	private Map<Integer, String> airlines;
 
 	private State available;
@@ -14,11 +23,17 @@ public class BoardingPassKiosk implements Stateful {
 	private State review;
 	private State confirm;
 
+	/* refers to current state of the object */
 	private State state;
+
+	/* store user inputs */
 	private int airline;
 	private String pnr;
 	private String seat;
 
+	/**
+	 * set the default entries to the airlines map
+	 */
 	private void setAirlines() {
 		airlines = new HashMap<>();
 		airlines.put(1, "Air India");
@@ -28,10 +43,11 @@ public class BoardingPassKiosk implements Stateful {
 		airlines.put(5, "Air Canada");
 	}
 
+	/* instantiate the entity */
 	public BoardingPassKiosk() {
 
 		setAirlines();
-		
+
 		this.available = new Available(this);
 		this.waiting = new Waiting(this);
 		this.verified = new Verified(this);
@@ -43,6 +59,7 @@ public class BoardingPassKiosk implements Stateful {
 		this.airline = 0;
 	}
 
+	/* getters */
 	public Map<Integer, String> getAirlines() {
 		return this.airlines;
 	}
@@ -78,7 +95,8 @@ public class BoardingPassKiosk implements Stateful {
 	public String getSeat() {
 		return seat;
 	}
-	
+
+	/* setters */
 	public void setAirline(int airline) {
 		this.airline = airline;
 	}
@@ -86,7 +104,7 @@ public class BoardingPassKiosk implements Stateful {
 	public void setPnr(String pnr) {
 		this.pnr = pnr;
 	}
-	
+
 	public void setSeat(String seat) {
 		this.seat = seat;
 	}
@@ -95,12 +113,16 @@ public class BoardingPassKiosk implements Stateful {
 	public State getState() {
 		return state;
 	}
-	
+
 	@Override
 	public void setState(State state) {
 		this.state = state;
 	}
 
+	/*
+	 * Different behaviours of the BoaringPassKiosk which are managed by different
+	 * states
+	 */
 	public void selectAirline(Scanner scanner) {
 		this.state.selectAirline(scanner);
 	}
