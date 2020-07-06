@@ -1,5 +1,11 @@
 package edu.immune.sw.pattern.singleton;
 
+/**
+ * Double Check Locking Singleton
+ * 
+ * @author Lalit Mehra
+ *
+ */
 public class StaticBlockSingleton {
 
 	private static StaticBlockSingleton instance;
