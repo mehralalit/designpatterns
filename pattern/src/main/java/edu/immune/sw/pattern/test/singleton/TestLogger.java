@@ -1,0 +1,59 @@
+package edu.immune.sw.pattern.test.singleton;
+
+import java.io.IOException;
+
+import edu.immune.sw.pattern.enums.LogLevel;
+import edu.immune.sw.pattern.singleton.archive.Logger;
+
+public class TestLogger {
+
+	public static void main(String[] args) throws IOException {
+		TestLogger testSingleton = new TestLogger();
+		testSingleton.testLogger(testSingleton);
+	}
+	
+	private void testLogger(TestLogger obj) {
+		String filepath = "/Users/Kurama/Documents/log.log";
+
+		Runnable run1 = () -> obj.runFirstLogger(filepath, 50);
+		Runnable run2 = () -> obj.runSecondLogger(filepath, 60);
+		Runnable run3 = () -> obj.runThirdLogger(filepath, 80);
+
+		new Thread(run1).start();
+		new Thread(run2).start();
+		new Thread(run3).start();
+	}
+
+	private void runFirstLogger(String filepath, int times) {
+		for (int count = 0; count < times; count++) {
+			try {
+				Logger logger = new Logger(filepath);
+				logger.log(LogLevel.INFO, "INFO Message ");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private void runSecondLogger(String filepath, int times) {
+		for (int count = 0; count < times; count++) {
+			try {
+				Logger logger = new Logger(filepath);
+				logger.log(LogLevel.DEBUG, "DEBUG Message ");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private void runThirdLogger(String filepath, int times) {
+		for (int count = 0; count < times; count++) {
+			try {
+				Logger logger = new Logger(filepath);
+				logger.log(LogLevel.WARNING, "WARN Message ");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
