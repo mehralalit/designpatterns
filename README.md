@@ -9,3 +9,5 @@ Contents ##
 3. State DP
 4. Strategy DP
 5. Singleton DP
+6. Factory DP
+7. Abstract Factory DP
