@@ -3,9 +3,9 @@ package edu.immune.sw.pattern;
 import org.junit.Assert;
 import org.junit.Test;
 
-import edu.immune.sw.pattern.singleton.EagerSingleton;
-import edu.immune.sw.pattern.singleton.LazySingleton;
-import edu.immune.sw.pattern.singleton.StaticBlockSingleton;
+import edu.immune.sw.pattern.singleton.impl.EagerSingleton;
+import edu.immune.sw.pattern.singleton.impl.LazySingleton;
+import edu.immune.sw.pattern.singleton.impl.StaticBlockSingleton;
 
 public class SingletonTest {
 

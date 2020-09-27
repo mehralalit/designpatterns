@@ -2,8 +2,8 @@ package edu.immune.sw.pattern.test.singleton;
 
 import java.io.IOException;
 
-import edu.immune.sw.pattern.enums.LogLevel;
-import edu.immune.sw.pattern.singleton.archive.Logger;
+import edu.immune.sw.pattern.singleton.enums.LogLevel;
+import edu.immune.sw.pattern.singleton.impl.BaseLogger;
 
 public class TestLogger {
 
@@ -27,7 +27,7 @@ public class TestLogger {
 	private void runFirstLogger(String filepath, int times) {
 		for (int count = 0; count < times; count++) {
 			try {
-				Logger logger = new Logger(filepath);
+				BaseLogger logger = new BaseLogger(filepath);
 				logger.log(LogLevel.INFO, "INFO Message ");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -38,7 +38,7 @@ public class TestLogger {
 	private void runSecondLogger(String filepath, int times) {
 		for (int count = 0; count < times; count++) {
 			try {
-				Logger logger = new Logger(filepath);
+				BaseLogger logger = new BaseLogger(filepath);
 				logger.log(LogLevel.DEBUG, "DEBUG Message ");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -49,7 +49,7 @@ public class TestLogger {
 	private void runThirdLogger(String filepath, int times) {
 		for (int count = 0; count < times; count++) {
 			try {
-				Logger logger = new Logger(filepath);
+				BaseLogger logger = new BaseLogger(filepath);
 				logger.log(LogLevel.WARNING, "WARN Message ");
 			} catch (Exception e) {
 				e.printStackTrace();

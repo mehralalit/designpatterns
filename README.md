@@ -11,3 +11,4 @@ Contents ##
 5. Singleton DP
 6. Factory DP
 7. Abstract Factory DP
+8. Object Pool DP
