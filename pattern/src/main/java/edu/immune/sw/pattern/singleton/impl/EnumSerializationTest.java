@@ -15,6 +15,7 @@ import java.io.ObjectOutputStream;
  */
 public class EnumSerializationTest {
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		final String filename = "/tmp/serialize.file";
 

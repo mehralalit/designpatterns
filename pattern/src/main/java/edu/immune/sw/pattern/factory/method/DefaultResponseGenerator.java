@@ -20,6 +20,8 @@ public class DefaultResponseGenerator extends ResponseGenerator {
 		case TIMEOUT:
 			resp = new TimeOut(result);
 			break;
+		default:
+			break;
 		}
 		return resp;
 	}

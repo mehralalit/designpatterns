@@ -26,6 +26,8 @@ public class GermanResponseGenerator extends ResponseGenerator {
 		case TIMEOUT:
 			resp = new GermanTimeOut(result, dialect);
 			break;
+		default:
+			break;
 		}
 		return resp;
 	}

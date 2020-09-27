@@ -21,6 +21,8 @@ public class FrenchResponseGenerator extends ResponseGenerator {
 		case TIMEOUT:
 			resp = new FrenchTimeOut(result);
 			break;
+		default:
+			break;
 		}
 		return resp;
 	}

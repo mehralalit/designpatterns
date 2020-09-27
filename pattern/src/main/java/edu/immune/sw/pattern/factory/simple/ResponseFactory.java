@@ -20,6 +20,8 @@ public class ResponseFactory {
 		case TIMEOUT:
 			resp = new TimeOut(result);
 			break;
+		default:
+			break;
 		}
 		return resp;
 	}
